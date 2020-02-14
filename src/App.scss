@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: lightslategray;
+}
+
+header {
+  padding: 50px 15px 0px;
+}
+header h1 {
+  color: azure;
+  text-align: center;
+  font-weight: bold;
+}
+
+main {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 15px;
+}
+
+/* Search Box */
+
+.searchbox {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: none;
+  background-color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  transition: 0.3s ease-out;
+}
+
+.searchbox:focus {
+  box-shadow: 0px 0px 8px 4px #74b9ff;
+}
+
+/* Movie Results */
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.results .result {
+  width: 33.333%;
+	min-width: 100px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.results .result h3 {
+	color: white;
+	font-size: 20px;
+	font-weight: 200;
+	padding: 10px;
+	background: transparent;
+	flex: 1 1 100%;
+  transition: 0.4s ease-out;
+  text-transform: uppercase;
+}
+
+.results .result p {
+  align-items: baseline;
+}
+
+.results .result:hover h3 {
+	color: lightblue;
+}
+
+.image-poster {
+  box-shadow: 5px 2px 5px black;
+  border-radius: 5px;
+}
