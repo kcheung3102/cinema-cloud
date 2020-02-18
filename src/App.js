@@ -3,11 +3,9 @@ import './App.scss';
 import Search from './components/Search';
 import Results from './components/Results';
 import axios from 'axios';
-import ApiConfig from './apiKeys';
 import Loader from './components/Loader/Loader';
-import {Switch,Route} from 'react-router-dom';
-
-
+import Burger from './components/Navbar/Burger';
+import Apiconfig from './apiKeys'
 
 function App(){
   //react state hook
@@ -16,12 +14,11 @@ function App(){
     results: [],
     selected: {}
   });
-  const apiurl = `https://www.omdbapi.com/?i=tt3896198&apikey=${ApiConfig.API_KEY}`;
+  const apiurl = `https://www.omdbapi.com/?i=tt3896198&apikey=${Apiconfig.API_KEY}`;
 
  
   const search = (e) => {
-    if(e.key === 'Enter' ) {
-      axios(apiurl + "&s=" + state.input).then(({data}) => {
+    axios(apiurl + "&s=" + state.input).then(({data}) => {
         let results = data.Search;
         //updates the search changes
         setState(prevState => {
@@ -30,8 +27,9 @@ function App(){
 
       });
 
-     }
   }
+
+
 
   const handleInput = (e) => {
     let input = e.target.value;
@@ -46,16 +44,14 @@ function App(){
       <h1>Cinema Cloud</h1>
       </header>
       <main>
-      {/* <Search
+      <Search
         handleInput={handleInput}
         search={search}
-        /> */}
-
-       
-      </main>
+        />
+    </main>
         <Loader />
-        {/* <Results 
-          results={state.results}/> */}
+        <Results 
+          results={state.results}/>
       
     </div>
   
