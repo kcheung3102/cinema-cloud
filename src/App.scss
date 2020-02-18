@@ -13,12 +13,14 @@ body {
 
 header {
   padding: 50px 15px 0px;
+
+  h1 {
+    color: azure;
+    text-align: center;
+    font-weight: bold;
+  }
 }
-header h1 {
-  color: azure;
-  text-align: center;
-  font-weight: bold;
-}
+
 
 main {
   width: 100%;
@@ -54,35 +56,45 @@ section {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -15px;
+
+  .result {
+    width: 33.333%;
+    min-width: 100px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .result h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 10px;
+    background: transparent;
+    flex: 1 1 100%;
+    transition: 0.4s ease-out;
+    text-transform: uppercase;
+  }
+
+  .result p {
+    align-items: baseline;
+  }
+
+  .result:hover h3 {
+    color: lightblue;
+  }
+
+
 }
 
-.results .result {
-  width: 33.333%;
-	min-width: 100px;
-	padding: 15px;
-	display: flex;
-	flex-direction: column;
-	cursor: pointer;
-}
 
-.results .result h3 {
-	color: white;
-	font-size: 20px;
-	font-weight: 200;
-	padding: 10px;
-	background: transparent;
-	flex: 1 1 100%;
-  transition: 0.4s ease-out;
-  text-transform: uppercase;
-}
 
-.results .result p {
-  align-items: baseline;
-}
 
-.results .result:hover h3 {
-	color: lightblue;
-}
+
+
+
+
 
 .image-poster {
   box-shadow: 5px 2px 5px black;

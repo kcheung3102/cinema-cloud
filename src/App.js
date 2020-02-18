@@ -5,6 +5,7 @@ import Results from './components/Results';
 import axios from 'axios';
 import ApiConfig from './apiKeys';
 import Loader from './components/Loader/Loader';
+import {Switch,Route} from 'react-router-dom';
 
 
 
@@ -45,14 +46,17 @@ function App(){
       <h1>Cinema Cloud</h1>
       </header>
       <main>
-      <Search
+      {/* <Search
         handleInput={handleInput}
         search={search}
-        />
+        /> */}
 
-        <Results results={state.results}/>
+       
       </main>
         <Loader />
+        {/* <Results 
+          results={state.results}/> */}
+      
     </div>
   
   );
