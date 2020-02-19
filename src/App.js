@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './App.scss';
-import Search from './components/Search';
+import Search from './components/Search/Search';
 import Results from './components/Results';
 import axios from 'axios';
 import Loader from './components/Loader/Loader';
 import Burger from './components/Navbar/Burger';
-import Apiconfig from './apiKeys'
+import Apiconfig from './apiKeys';
 
 function App(){
   //react state hook
@@ -14,18 +14,23 @@ function App(){
     results: [],
     selected: {}
   });
-  const apiurl = `https://www.omdbapi.com/?i=tt3896198&apikey=${Apiconfig.API_KEY}`;
+  const apiurl = `http://www.omdbapi.com/?i=tt3896198&apikey=${Apiconfig.API_KEY}`;
 
  
   const search = (e) => {
-    axios(apiurl + "&s=" + state.input).then(({data}) => {
+    if(e.key === "Enter") {
+    axios(apiurl + "&s=" + state.input).then(({ data }) => {
         let results = data.Search;
+
         //updates the search changes
+
         setState(prevState => {
           return {...prevState, results: results}
         })
 
       });
+
+    } 
 
   }
 
@@ -33,11 +38,12 @@ function App(){
 
   const handleInput = (e) => {
     let input = e.target.value;
-    //updates the input changes made when typing
+
     setState(prevState => {
-      return {...prevState, input: input}
+      return { ...prevState, input: input }
     });
   }
+
   return (
     <div className="App">
       <header>
@@ -48,10 +54,11 @@ function App(){
         handleInput={handleInput}
         search={search}
         />
+
+<Results 
+          results={state.results}/>
     </main>
         <Loader />
-        <Results 
-          results={state.results}/>
       
     </div>
   

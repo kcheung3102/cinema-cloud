@@ -14,14 +14,15 @@
     margin: 0 2px;
     transition: transform 300ms ease 100ms;
 
-    .item:hover {
-      transform: scale(1.5) !important;
-    }
-  
-   .item:hover ~ .item {
-      transform: translateX(25%);
-   }
-
-
   }
+
+  
+  .item:hover {
+    transform: scale(1.5) !important;
+  }
+
+ .item:hover ~ .item {
+    transform: translateX(25%);
+ }
+
   
