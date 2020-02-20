@@ -22,6 +22,8 @@ function App(){
     axios(apiurl + "&s=" + state.input).then(({ data }) => {
         let results = data.Search;
 
+        console.log(results);
+
         //updates the search changes
 
         setState(prevState => {
@@ -34,13 +36,27 @@ function App(){
 
   }
 
-
-
-  const handleInput = (e) => {
+ const handleInput = (e) => {
     let input = e.target.value;
 
     setState(prevState => {
       return { ...prevState, input: input }
+    });
+  }
+
+  const toggle = (id) => {
+    axios(apiurl + "&i=" + id).then(({ data }) => {
+      let result = data;
+
+      setState(prevState => {
+        return { ...prevState, selected: result }
+      });
+    });
+  }
+
+  const closeToggle = () => {
+    setState(prevState => {
+      return { ...prevState, selected:{}}
     });
   }
 
