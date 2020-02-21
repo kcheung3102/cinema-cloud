@@ -4,11 +4,11 @@ import Result from './Result';
 
 
 
- function Results({results, toggle}) {
+ function Results({results, toggleModal}) {
     return (
         <section className='results'>
            {results.map(result => (
-				<Result key={result.imdbID} result={result} toggle={toggle} />
+				<Result key={result.imdbID} result={result} toggleModal={toggleModal} />
            ))}
         </section>
     )

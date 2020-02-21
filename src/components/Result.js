@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
-export default function Result ({ result, toggle }) {
+export default function Result ({ result, toggleModal }) {
     return (
-        <div className='result' onClick={() => toggle(result.imbID)}>
-            <div className='info-section'>
+        <div className='result' >
+            <div className='info-section' onClick={() => toggleModal(result.imbID)}>
             <div className='card-header'>
                 <img src={result.Poster} alt="movie" className="image-poster" />
                 <h1>{result.Title}</h1>

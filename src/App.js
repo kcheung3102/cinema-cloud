@@ -48,7 +48,7 @@ function App(){
     });
   }
 
-  const toggle = (id) => {
+  const toggleModal= (id) => {
     axios(apiurl + "&i=" + id).then(({ data }) => {
       let result = data;
 
@@ -77,7 +77,7 @@ function App(){
 
       <Results 
           results={state.results}
-          toggle={toggle}  
+          toggleModal={toggleModal}  
           />
     </main>
         <Loader />
