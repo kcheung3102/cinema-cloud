@@ -4,14 +4,12 @@ import Result from './Result';
 
 
 
- function Results({results}) {
+ function Results({results, toggle}) {
     return (
         <section className='results'>
-            <div className="column">
            {results.map(result => (
-				<Result key={result.imdbID} result={result} />
+				<Result key={result.imdbID} result={result} toggle={toggle} />
            ))}
-           </div>
         </section>
     )
 }

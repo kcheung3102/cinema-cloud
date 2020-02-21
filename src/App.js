@@ -6,6 +6,10 @@ import axios from 'axios';
 import Loader from './components/Loader/Loader';
 import Burger from './components/Navbar/Burger';
 import Apiconfig from './apiKeys';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import{ faShare, faComments,faHeart,faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faShare, faComments, faHeart, faTimesCircle);
 
 function App(){
   //react state hook
@@ -71,8 +75,10 @@ function App(){
         search={search}
         />
 
-<Results 
-          results={state.results}/>
+      <Results 
+          results={state.results}
+          toggle={toggle}  
+          />
     </main>
         <Loader />
       
