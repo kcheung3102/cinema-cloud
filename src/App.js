@@ -4,12 +4,12 @@ import Search from './components/Search/Search';
 import Results from './components/Results';
 import axios from 'axios';
 import Loader from './components/Loader/Loader';
-import Burger from './components/Navbar/Burger';
 import Apiconfig from './apiKeys';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import{ faShare, faComments,faHeart,faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import{ faShare, faComments,faHeart,faTimesCircle,faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import Modal from './components/Modal/Modal';
 
-library.add(faShare, faComments, faHeart, faTimesCircle);
+library.add(faShare, faComments, faHeart, faTimesCircle, faPlayCircle);
 
 function App(){
   //react state hook
@@ -18,7 +18,7 @@ function App(){
     results: [],
     selected: {}
   });
-  const apiurl = `http://www.omdbapi.com/?i=tt3896198&apikey=${Apiconfig.API_KEY}`;
+  const apiurl = `http://www.omdbapi.com/?apikey=${Apiconfig.API_KEY}`;
 
  
   const search = (e) => {
@@ -48,9 +48,22 @@ function App(){
     });
   }
 
-  const toggleModal= (id) => {
+  // const toggleModal= id => {
+  //   axios(apiurl + "&i=" + id).then(({ data }) => {
+  //     let result = data;
+  //     console.log(result);
+
+  //     setState(prevState => {
+  //       return { ...prevState, selected: result }
+  //     });
+  //   });
+  // }
+
+  const openPopup = id => {
     axios(apiurl + "&i=" + id).then(({ data }) => {
       let result = data;
+
+      console.log(result);
 
       setState(prevState => {
         return { ...prevState, selected: result }
@@ -77,8 +90,9 @@ function App(){
 
       <Results 
           results={state.results}
-          toggleModal={toggleModal}  
+          openPopup={openPopup}  
           />
+      {(typeof state.selected.Title !="undefined") ? <Modal selected={state.selected} closeToggle={closeToggle} /> : false}
     </main>
         <Loader />
       
