@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import './App.scss';
-import Search from './components/Search/Search';
-import Results from './components/Results';
+import Search from './components/Search/Search'
+import Results from './components/Results'
+import Popup from './components/Popup/Popup'
 import axios from 'axios';
 import Loader from './components/Loader/Loader';
 import Apiconfig from './apiKeys';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import{ faShare, faComments,faHeart,faTimesCircle,faPlayCircle } from '@fortawesome/free-solid-svg-icons';
-import Modal from './components/Modal/Modal';
+
 
 library.add(faShare, faComments, faHeart, faTimesCircle, faPlayCircle);
 
@@ -25,8 +26,6 @@ function App(){
     if(e.key === "Enter") {
     axios(apiurl + "&s=" + state.input).then(({ data }) => {
         let results = data.Search;
-
-        console.log(results);
 
         //updates the search changes
 
@@ -48,16 +47,6 @@ function App(){
     });
   }
 
-  // const toggleModal= id => {
-  //   axios(apiurl + "&i=" + id).then(({ data }) => {
-  //     let result = data;
-  //     console.log(result);
-
-  //     setState(prevState => {
-  //       return { ...prevState, selected: result }
-  //     });
-  //   });
-  // }
 
   const openPopup = id => {
     axios(apiurl + "&i=" + id).then(({ data }) => {
@@ -71,7 +60,7 @@ function App(){
     });
   }
 
-  const closeToggle = () => {
+  const closePopup = () => {
     setState(prevState => {
       return { ...prevState, selected:{}}
     });
@@ -88,11 +77,11 @@ function App(){
         search={search}
         />
 
-      <Results 
-          results={state.results}
-          openPopup={openPopup}  
-          />
-      {(typeof state.selected.Title !="undefined") ? <Modal selected={state.selected} closeToggle={closeToggle} /> : false}
+      <Results  
+      results={state.results} 
+      openPopup={openPopup}   />
+
+     {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
     </main>
         <Loader />
       

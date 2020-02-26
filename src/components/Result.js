@@ -2,12 +2,10 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-
-
 export default function Result ({ result, openPopup }) {
     return (
-        <div className='result'  >
-            <div className='info-section'  onClick={() => openPopup(result.imdbID)} >
+        <div className='result' onClick={() => openPopup(result.imdbID)} >
+            <div className='info-section' >
             <div className='card-header'>
                 <img src={result.Poster} alt="movie" className="image-poster" />
                 <h1>{result.Title}</h1>

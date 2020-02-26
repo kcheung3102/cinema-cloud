@@ -8,6 +8,7 @@ import './Search.scss';
  function Search({handleInput, search}) {
 
     return (
+		
         <section className='searchbox-wrap'>
         <input 
 				type="text" 
@@ -16,8 +17,9 @@ import './Search.scss';
 				onChange={handleInput}
 				onKeyPress={search}
 			/>
-           
         </section>
+		
+		
     )
 }
 export default Search
