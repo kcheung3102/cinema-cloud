@@ -8,6 +8,20 @@ import Loader from './components/Loader/Loader';
 import Apiconfig from './apiKeys';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import{ faShare, faComments,faHeart,faTimesCircle,faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import styled, { keyframes } from 'styled-components';
+import { bounce, fadeInDown, flipInY } from 'react-animations';
+ 
+const bounceAnimation = keyframes`${bounce}`;
+const fadeInDownAnimation = keyframes `${fadeInDown}`;
+
+
+const FadeInDownDiv = styled.div `
+animation: 3s ${fadeInDownAnimation}
+` 
+const BouncyDiv = styled.div`
+  
+  animation: 3s ${bounceAnimation};
+`;
 
 
 library.add(faShare, faComments, faHeart, faTimesCircle, faPlayCircle);
@@ -52,7 +66,6 @@ function App(){
     axios(apiurl + "&i=" + id).then(({ data }) => {
       let result = data;
 
-      console.log(result);
 
       setState(prevState => {
         return { ...prevState, selected: result }
@@ -69,17 +82,24 @@ function App(){
   return (
     <div className="App">
       <header>
+      <BouncyDiv>
       <h1>Cinema Cloud</h1>
+      </BouncyDiv>
       </header>
       <main>
+      <FadeInDownDiv>
       <Search
         handleInput={handleInput}
         search={search}
         />
-
+      </FadeInDownDiv>
+     
+      
       <Results  
       results={state.results} 
       openPopup={openPopup}   />
+    
+    
 
      {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
     </main>
