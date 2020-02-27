@@ -10,6 +10,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import{ faShare, faComments,faHeart,faTimesCircle,faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import styled, { keyframes } from 'styled-components';
 import { bounce, fadeInDown, flipInY } from 'react-animations';
+import logo from './Images/cloud.png';
  
 const bounceAnimation = keyframes`${bounce}`;
 const fadeInDownAnimation = keyframes `${fadeInDown}`;
@@ -82,9 +83,12 @@ function App(){
   return (
     <div className="App">
       <header>
+      <div class='header-container'>
       <BouncyDiv>
-      <h1>Cinema Cloud</h1>
+      <h1 class='header-text'>Cinema Cloud</h1>
+      <img  className='logo' src={logo} alt='logo'  />
       </BouncyDiv>
+      </div>
       </header>
       <main>
       <FadeInDownDiv>

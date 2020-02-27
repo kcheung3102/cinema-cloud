@@ -1,6 +1,7 @@
 import React from 'react'
 import './Popup.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Loader from '../Loader/Loader';
 
 function Popup({ selected, closePopup }) {
 	return (
@@ -50,6 +51,7 @@ function Popup({ selected, closePopup }) {
                 </div>
             </div>
         </div>
+        <Loader/>
 		</section>
 	)
 }

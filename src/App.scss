@@ -39,8 +39,7 @@ section {
 
 /* Movie Results */
 .results{
-  display: flex;
-  flex-direction: row;
+  display:flex;
   flex-wrap: wrap;
 	
 	.result {
@@ -48,10 +47,10 @@ section {
 	  flex-direction: column;
 	  cursor: pointer;
 	  position: relative;
-	  width: 33.333%;
+	  // width: 33.333%;
 	  min-width: 475px;
 	  height: 250px;
-	  margin: 25px auto; 
+	  margin: 15px auto; 
 	  overflow: hidden;
 	  border-radius: 10px;
 	  transition: all 0.4s;
@@ -173,7 +172,7 @@ section {
   
   @media screen and (max-width: 768px) {
 	.result{
-	  width: 95%;
+	  width: 70%;
 	  margin: 70px auto; 
 	  min-height: 350px;
 	  height: auto;
@@ -195,8 +194,15 @@ section {
 	  display: inline-grid;
 	}
   }
-  
 
+  .logo {
+	  width: 100px;
+	  
+  }
+
+  .header-container {
+	  text-align: center;
+  }
 
 
 
