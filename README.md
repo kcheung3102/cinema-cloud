@@ -2,7 +2,7 @@
 ## Cinema Cloud 
 A react application that lets you search different movies and shows
 
-## `Built With`
+## 'Built With'
 React 
 
 SASS
@@ -10,13 +10,13 @@ SASS
 OMDB(Open Movie Database) API
 
 
-### `Acknowledgements`
+## `Acknowledgements`
 
 Smooth Scroll JS
 
 React Animations
 
-### `Coming soon/Improvements`
+## `Coming soon/Improvements`
 
 More search filter features
 
