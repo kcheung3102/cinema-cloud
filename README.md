@@ -2,7 +2,7 @@
 ## Cinema Cloud 
 A react application that lets you search different movies and shows
 
-## 'Built With'
+## `Built With`
 React 
 
 SASS
