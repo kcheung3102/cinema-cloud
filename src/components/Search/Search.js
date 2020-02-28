@@ -1,11 +1,12 @@
 import React from 'react';
 import './Search.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
 
 //passing the props by destructing instead of this.props 
- function Search({handleInput, search}) {
+ function Search({handleInput, search, searchClick}) {
 
     return (
 		
@@ -13,9 +14,15 @@ import './Search.scss';
         <input 
 				type="text" 
 				placeholder="Search for a movie..." 
-				className="searchbox" 
 				onChange={handleInput}
 				onKeyPress={search}
+				className='searchbox '
+			/>
+			<FontAwesomeIcon
+			icon='search'
+			size='3x'
+			className='search-btn'
+			onClick={searchClick}	
 			/>
         </section>
 		

@@ -41,13 +41,13 @@ section {
 .results{
   display:flex;
   flex-wrap: wrap;
+  
 	
 	.result {
 	  display: flex;
 	  flex-direction: column;
 	  cursor: pointer;
 	  position: relative;
-	  // width: 33.333%;
 	  min-width: 475px;
 	  height: 250px;
 	  margin: 15px auto; 

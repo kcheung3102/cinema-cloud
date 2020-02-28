@@ -7,25 +7,25 @@ import axios from 'axios';
 import Loader from './components/Loader/Loader';
 import Apiconfig from './apiKeys';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import{ faShare, faComments,faHeart,faTimesCircle,faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import{ faShare, faComments,faHeart,faTimesCircle,faPlayCircle, faSearch } from '@fortawesome/free-solid-svg-icons';
 import styled, { keyframes } from 'styled-components';
-import { bounce, fadeInDown, flipInY } from 'react-animations';
+import { bounce, fadeInDown} from 'react-animations';
 import logo from './Images/cloud.png';
  
-const bounceAnimation = keyframes`${bounce}`;
+
 const fadeInDownAnimation = keyframes `${fadeInDown}`;
-
-
 const FadeInDownDiv = styled.div `
 animation: 3s ${fadeInDownAnimation}
 ` 
+
+const bounceAnimation = keyframes`${bounce}`;
 const BouncyDiv = styled.div`
   
   animation: 3s ${bounceAnimation};
 `;
 
-
-library.add(faShare, faComments, faHeart, faTimesCircle, faPlayCircle);
+//adds icons to  a library to be converted
+library.add(faShare, faComments, faHeart, faTimesCircle, faPlayCircle, faSearch);
 
 function App(){
   //react state hook
@@ -53,6 +53,22 @@ function App(){
     } 
 
   }
+
+  const searchClick = (e) => {
+    axios(apiurl + "&s=" + state.input).then(({ data }) => {
+        let results = data.Search;
+
+        //updates the search changes
+
+        setState(prevState => {
+          return {...prevState, results: results}
+        })
+
+      });
+
+  }
+
+  
 
  const handleInput = (e) => {
     let input = e.target.value;
@@ -95,6 +111,7 @@ function App(){
       <Search
         handleInput={handleInput}
         search={search}
+        searchClick={searchClick}
         />
       </FadeInDownDiv>
      

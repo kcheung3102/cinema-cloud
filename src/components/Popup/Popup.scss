@@ -42,16 +42,15 @@ h1,h2,h3,h4,h5 {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: linear-gradient(#7f7f7f, black);
+	background:#223343;
 	z-index: 2;
-
 	overflow-y: scroll;
 }
 
 .modal-container {
 	width:310px;
 	height:550px;
-	margin : 60px auto 0 auto;
+	margin : 25px auto 0 auto;
 	background-color: white;
 	box-shadow:5px 5px 115px -14px whitesmoke;
 	border-radius: 4px;

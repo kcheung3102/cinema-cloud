@@ -1,5 +1,23 @@
+.searchbox-wrap {
+	display: flex;
+}
+
+.search-btn {
+	padding: 10px 0px 0px 10px;
+	color: lightslategrey;
+	transition: transform .5s ease;
+
+	&:hover{
+		color: rgba($color: #ffffff, $alpha: 1.0);
+		cursor: pointer;
+		transform: scale(1.2);
+
+	}
+}
+
+
 .searchbox {
-	display: block;
+	flex-grow: 4;
 	width: 100%;
 	padding: 15px;
 

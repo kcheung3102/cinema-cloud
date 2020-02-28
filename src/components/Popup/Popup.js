@@ -2,6 +2,13 @@ import React from 'react'
 import './Popup.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Loader from '../Loader/Loader';
+import styled, { keyframes } from 'styled-components';
+import { slideOutUp} from 'react-animations';
+
+const slideOutUpAnimation = keyframes `${slideOutUp}`;
+const SlideOutUpDiv = styled.div `
+animation: 3s ${slideOutUpAnimation}
+`
 
 function Popup({ selected, closePopup }) {
 	return (
