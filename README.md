@@ -15,3 +15,16 @@ OMDB(Open Movie Database) API
 Smooth Scroll JS
 
 React Animations
+
+### `Coming soon/Improvements`
+
+More search filter features
+
+Mobile Responsiveness
+
+User sign in/register
+
+User favorite feature
+
+
+
