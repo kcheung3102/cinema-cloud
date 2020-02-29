@@ -9,9 +9,11 @@ A react application that lets you search different movies and shows
 ## `Built With`
 React 
 
-SASS
+CSS3 | SASS
 
 OMDB(Open Movie Database) API
+
+Netlify Deployment
 
 
 ## `Acknowledgements`
