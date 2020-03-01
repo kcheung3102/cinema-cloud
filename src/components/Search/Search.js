@@ -6,25 +6,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 //passing the props by destructing instead of this.props 
- function Search({handleInput, search, searchClick}) {
+ function Search({handleInput,searchClick,search}) {
 
     return (
 		
-        <section className='searchbox-wrap'>
+        
+		<section className='searchbox-wrap'>
         <input 
 				type="text" 
 				placeholder="Search for a movie..." 
 				onChange={handleInput}
-				onKeyPress={search}
 				className='searchbox '
+				onKeyPress={search}
 			/>
 			<FontAwesomeIcon
 			icon='search'
 			size='3x'
 			className='search-btn'
-			onClick={searchClick}	
+			onClick={searchClick}
 			/>
-        </section>
+			
+			</section>
 		
 		
     )

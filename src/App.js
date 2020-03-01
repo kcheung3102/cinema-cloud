@@ -36,35 +36,43 @@ function App(){
   });
   const apiurl = `http://www.omdbapi.com/?apikey=${Apiconfig.API_KEY}`;
 
- 
+ //need to refactor onclick and keypress...need to merge them
   const search = (e) => {
     if(e.key === "Enter") {
-    axios(apiurl + "&s=" + state.input).then(({ data }) => {
-        let results = data.Search;
+        state.input.trim() === "" || state.input.trim().length === 0 ? 
+         alert("Please enter a movie") 
+       : axios(apiurl + "&s=" + state.input).then(({ data }) => {
+               let results = data.Search;
+       
+               
+               //updates the search changes
+               setState(prevState => {
+                 return {...prevState, results: results}
+               })
+       
+             });
 
-        //updates the search changes
-
-        setState(prevState => {
-          return {...prevState, results: results}
-        })
-
-      });
-
-    } 
+    }  
 
   }
 
+
   const searchClick = (e) => {
-    axios(apiurl + "&s=" + state.input).then(({ data }) => {
-        let results = data.Search;
+    //checks if search is an empty string or not
+    state.input.trim() === "" || state.input.trim().length === 0 ? 
+      alert("Please enter a movie") 
+  : axios(apiurl + "&s=" + state.input).then(({ data }) => {
+          let results = data.Search;
+  
+          
+          //updates the search changes
+          setState(prevState => {
+            return {...prevState, results: results}
+          })
+  
+        });
 
-        //updates the search changes
-
-        setState(prevState => {
-          return {...prevState, results: results}
-        })
-
-      });
+    
 
   }
 
@@ -76,6 +84,7 @@ function App(){
     setState(prevState => {
       return { ...prevState, input: input }
     });
+
   }
 
 
@@ -99,9 +108,9 @@ function App(){
   return (
     <div className="App">
       <header>
-      <div class='header-container'>
+      <div className='header-container'>
       <BouncyDiv>
-      <h1 class='header-text'>Cinema Cloud</h1>
+      <h1 className='header-text'>Cinema Cloud</h1>
       <img  className='logo' src={logo} alt='logo'  />
       </BouncyDiv>
       </div>
