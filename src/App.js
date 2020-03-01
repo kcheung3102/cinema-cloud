@@ -34,7 +34,7 @@ function App(){
     results: [],
     selected: {}
   });
-  const apiurl = `http://www.omdbapi.com/?apikey=${Apiconfig.API_KEY}`;
+  const apiurl = `https://www.omdbapi.com/?apikey=${Apiconfig.API_KEY}`;
 
  //need to refactor onclick and keypress...need to merge them
   const search = (e) => {
