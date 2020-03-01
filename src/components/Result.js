@@ -41,7 +41,7 @@ export default function Result ({ result, openPopup }) {
     </div>
             <FadeInDiv>
             <div className='blur-back'>
-                <img src={result.Poster} alt='movie'></img>
+                <img className='blur-back-poster'src={result.Poster} alt='movie' />
             </div>
             </FadeInDiv>
           
