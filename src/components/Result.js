@@ -1,13 +1,17 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { keyframes } from 'styled-components';
-import { flipInY } from 'react-animations';
+import { flipInY, fadeIn } from 'react-animations';
  
 const flipInYAnimation = keyframes `${flipInY}`;
+const fadeInAnimation = keyframes `${fadeIn}`;
+
+const FadeInDiv = styled.div `
+animation: 6s ${fadeInAnimation}`
 
 
 const FlipInAnimationDiv = styled.div `
-animation: 2s ${flipInYAnimation}`
+animation: 3s ${flipInYAnimation}`
 
 
 
@@ -16,7 +20,7 @@ export default function Result ({ result, openPopup }) {
     return (
        
         <div className='result' onClick={() => openPopup(result.imdbID)} >
-     
+          
             <div className='info-section' >
             <FlipInAnimationDiv>
             <div className='card-header'>
@@ -35,10 +39,11 @@ export default function Result ({ result, openPopup }) {
             </div>
         </FlipInAnimationDiv>
     </div>
-   
+            <FadeInDiv>
             <div className='blur-back'>
                 <img src={result.Poster} alt='movie'></img>
             </div>
+            </FadeInDiv>
           
     
         </div>

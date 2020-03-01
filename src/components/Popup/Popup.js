@@ -10,6 +10,8 @@ const SlideOutUpDiv = styled.div `
 animation: 3s ${slideOutUpAnimation}
 `
 
+ 
+
 function Popup({ selected, closePopup }) {
 	return (
 		<section className="popup">
