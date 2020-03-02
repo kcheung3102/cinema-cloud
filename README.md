@@ -13,16 +13,14 @@ React
 
 CSS3 | SASS
 
-OMDB(Open Movie Database) API
-
 Netlify Deployment
 
 
 ## `Acknowledgements`
 
-Smooth Scroll JS
-
 React Animations
+
+OMDB(Open Movie Database) API
 
 ## `Coming soon/Improvements`
 
