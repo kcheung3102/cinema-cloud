@@ -36,19 +36,18 @@ function App(){
   });
   const apiurl = `https://www.omdbapi.com/?apikey=${Apiconfig.API_KEY}`;
 
- //need to refactor onclick and keypress...need to merge them
+
+ //need to refactor onclick and keypress...
   const search = (e) => {
     if(e.key === "Enter") {
         state.input.trim() === "" || state.input.trim().length === 0 ? 
          alert("Please enter a movie") 
        : axios(apiurl + "&s=" + state.input).then(({ data }) => {
-               let results = data.Search;
+              let results = data.Search;
        
                
                //updates the search changes
-               setState(prevState => {
-                 return {...prevState, results: results}
-               })
+               setState({results: results})
        
              });
 
@@ -66,9 +65,7 @@ function App(){
   
           
           //updates the search changes
-          setState(prevState => {
-            return {...prevState, results: results}
-          })
+          setState({results: results})
   
         });
 
