@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cinema-cloud/static/css/main.9f4e7461.chunk.css",
+    "main.js": "/cinema-cloud/static/js/main.4aa7eada.chunk.js",
+    "main.js.map": "/cinema-cloud/static/js/main.4aa7eada.chunk.js.map",
+    "runtime-main.js": "/cinema-cloud/static/js/runtime-main.1d7d157c.js",
+    "runtime-main.js.map": "/cinema-cloud/static/js/runtime-main.1d7d157c.js.map",
+    "static/js/2.10279b53.chunk.js": "/cinema-cloud/static/js/2.10279b53.chunk.js",
+    "static/js/2.10279b53.chunk.js.map": "/cinema-cloud/static/js/2.10279b53.chunk.js.map",
+    "index.html": "/cinema-cloud/index.html",
+    "precache-manifest.eda9828edd872f0b008b54ba9d3cffe6.js": "/cinema-cloud/precache-manifest.eda9828edd872f0b008b54ba9d3cffe6.js",
+    "service-worker.js": "/cinema-cloud/service-worker.js",
+    "static/css/main.9f4e7461.chunk.css.map": "/cinema-cloud/static/css/main.9f4e7461.chunk.css.map",
+    "static/js/2.10279b53.chunk.js.LICENSE.txt": "/cinema-cloud/static/js/2.10279b53.chunk.js.LICENSE.txt",
+    "static/media/cloud.png": "/cinema-cloud/static/media/cloud.746db003.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1d7d157c.js",
+    "static/js/2.10279b53.chunk.js",
+    "static/css/main.9f4e7461.chunk.css",
+    "static/js/main.4aa7eada.chunk.js"
+  ]
+}
